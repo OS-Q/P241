@@ -50,15 +50,16 @@ def get_linker_script(mcu):
 env.Append(
     CPPPATH=[
         join(FRAMEWORK_DIR, board.get("build.core"),
-             "cmsis", "cores", board.get("build.core")),
+            "cmsis", "cores", board.get("build.core")),
         join(FRAMEWORK_DIR, board.get("build.core"), "cmsis",
-             "variants", board.get("build.mcu")[0:7]),
+            "variants", board.get("build.mcu")[0:7]),
         join(FRAMEWORK_DIR, board.get("build.core"), "spl",
-             "variants", board.get("build.mcu")[0:7], "inc"),
+            "variants", board.get("build.mcu")[0:7], "inc"),
         join(FRAMEWORK_DIR, board.get("build.core"), "spl",
-             "variants", board.get("build.mcu")[0:7], "src")
+            "variants", board.get("build.mcu")[0:7], "src")
     ]
 )
+env.Append(LINKFLAGS=["--specs=nosys.specs", "--specs=nano.specs"])
 
 env.Append(
     CPPDEFINES=[
