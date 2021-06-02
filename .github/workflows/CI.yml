@@ -4,13 +4,13 @@ on:
   push:
     branches:
       - master
-    paths:
-      - 'boards/**'
-      - 'builder/**'
-      - 'examples/**'
-      - '**.json'
-      - '**.yml'
-      - '**.py'
+    # paths:
+    #   - 'boards/**'
+    #   - 'builder/**'
+    #   - 'examples/**'
+    #   - '**.json'
+    #   - '**.yml'
+    #   - '**.py'
 
 jobs:
   CodeCheck:
