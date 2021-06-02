@@ -55,9 +55,9 @@ jobs:
       matrix:
         example:
           - "gd32f103"
-          - "gd32f130c6"
-          - "gd32f350cb"
-        # package: ["pio","qio"]
+          - "gd32f130"
+          - "gd32f350"
+        package: ["pio","qio"]
         os: [ubuntu-latest, windows-latest, macos-latest]
 
     runs-on: ${{ matrix.os }}
@@ -72,14 +72,14 @@ jobs:
         with:
           python-version: 3.9
 
-      # - name: Install qio
-      #   if: matrix.package == 'qio'
-      #   run: |
-      #     pip install -U https://github.com/OS-Q/M03/releases/latest/download/qio.zip
-      #     qio platform install file://.
+      - name: Install qio
+        if: matrix.package == 'qio'
+        run: |
+          pip install -U https://github.com/OS-Q/M03/releases/latest/download/qio.zip
+          qio platform install file://.
 
       - name: Install pio
-        # if: matrix.package == 'pio'
+        if: matrix.package == 'pio'
         run: |
           pip install -U https://github.com/platformio/platformio/archive/develop.zip
           pio platform install file://.
