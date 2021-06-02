@@ -29,7 +29,7 @@
       "script": "builder/frameworks/cmsis.py"
     },
     "spl": {
-      "package": "framework-spl",
+      "package": "E241",
       "script": "builder/frameworks/spl.py"
     }
   },
@@ -62,11 +62,9 @@
         "~2.50700.0"
       ]
     },
-    "framework-spl": {
+    "E241": {
       "type": "framework",
-      "optional": true,
-      "owner": "platformio",
-      "version": "~2.10201.0"
+      "version": "https://github.com/OS-Q/E241"
     },
     "framework-libopencm3": {
       "type": "framework",

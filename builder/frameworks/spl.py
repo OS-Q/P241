@@ -9,7 +9,7 @@ board = env.BoardConfig()
 
 env.SConscript("_bare.py")
 
-FRAMEWORK_DIR = platform.get_package_dir("framework-spl")
+FRAMEWORK_DIR = platform.get_package_dir("E241")
 assert isdir(FRAMEWORK_DIR)
 
 
